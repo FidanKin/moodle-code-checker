@@ -1,0 +1,15 @@
+{
+  "name": "vendor_name/dev-code-checker",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "fidan",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    
+  }
+}

@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+tasks:
+  install-composer:
+    status:
+      - test -f ./composer.json
+    cmds:
+      - cp './composer_405.json' './composer.json'
+      - composer require --dev moodlehq/moodle-cs
+      - composer require --dev vimeo/psalm:^5.26
+  check-code:
+    cmd: ./vendor/bin/phpcs
+    ignore_error: true
+  fix-code:
+    cmd: ./vendor/bin/phpcbf
+    ignore_error: true
+  run-psalm:
+    cmd: ./vendor/bin/psalm --no-cache
